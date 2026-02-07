@@ -188,30 +188,36 @@ flexibility(document.documentElement);
 				</div>
 				</div>
 				</header>
-	<!-- menu functonality -->
+		<!-- menu functionality -->
 	<script>
-	document.addEventListener('DOMContentLoaded', function() {
-	    const menuToggle = document.querySelector('.hfe-nav-menu__toggle');
-	    const navMenu = document.querySelector('.hfe-nav-menu__layout-horizontal');
-	    
-	    if (menuToggle && navMenu) {
-	        menuToggle.addEventListener('click', function(e) {
-	            e.preventDefault();
-	            navMenu.classList.toggle('menu-open');
-	            menuToggle.classList.toggle('menu-toggle-active');
-	        });
-	        
-	        // Close menu when clicking on a menu item
-	        const menuItems = document.querySelectorAll('.hfe-nav-menu a');
-	        menuItems.forEach(item => {
-	            item.addEventListener('click', function() {
-	                navMenu.classList.remove('menu-open');
-	                menuToggle.classList.remove('menu-toggle-active');
-	            });
-	        });
-	    }
-	});
-	</script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    const menuToggle = document.querySelector('.hfe-nav-menu__toggle');
+		    const navMenu = document.querySelector('.hfe-nav-menu__layout-horizontal');
+		    
+		    if (menuToggle && navMenu) {
+		        menuToggle.addEventListener('click', function(e) {
+		            e.preventDefault();
+		            // Toggle the menu visibility
+		            navMenu.classList.toggle('menu-open');
+		            menuToggle.classList.toggle('menu-toggle-active');
+		            
+		            // Update aria attributes for accessibility
+		            const isExpanded = navMenu.classList.contains('menu-open');
+		            menuToggle.setAttribute('aria-expanded', isExpanded);
+		        });
+		        
+		        // Close menu when clicking on a menu item
+		        const menuItems = document.querySelectorAll('.hfe-nav-menu a');
+		        menuItems.forEach(item => {
+		            item.addEventListener('click', function() {
+		                navMenu.classList.remove('menu-open');
+		                menuToggle.classList.remove('menu-toggle-active');
+		                menuToggle.setAttribute('aria-expanded', 'false');
+		            });
+		        });
+		    }
+		});
+		</script>
 
 		<div id="content" class="site-content">
 		<div class="ast-container">
