@@ -188,52 +188,6 @@ flexibility(document.documentElement);
 				</div>
 				</div>
 				</header>
-		<!-- menu functionality -->
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		    const menuToggle = document.querySelector('.hfe-nav-menu__toggle');
-		    const navMenu = document.querySelector('.hfe-nav-menu__layout-horizontal');
-		    
-		    if (menuToggle && navMenu) {
-		        menuToggle.addEventListener('click', function(e) {
-		            e.preventDefault();
-		            // Toggle the menu visibility
-		            navMenu.classList.toggle('menu-open');
-		            menuToggle.classList.toggle('menu-toggle-active');
-		            
-		            // Update aria attributes for accessibility
-		            const isExpanded = navMenu.classList.contains('menu-open');
-		            menuToggle.setAttribute('aria-expanded', isExpanded);
-		        });
-		        
-		        // Close menu when clicking on a menu item
-		        const menuItems = document.querySelectorAll('.hfe-nav-menu a');
-		        menuItems.forEach(item => {
-		            item.addEventListener('click', function() {
-		                navMenu.classList.remove('menu-open');
-		                menuToggle.classList.remove('menu-toggle-active');
-		                menuToggle.setAttribute('aria-expanded', 'false');
-		            });
-		        });
-		    }
-		});
-		</script>
-	<style>
-		.hfe-nav-menu__layout-horizontal {
-		    display: none !important;
-		}
-		
-		.hfe-nav-menu__layout-horizontal.menu-open {
-		    display: block !important;
-		    position: absolute !important;
-		    top: 100% !important;
-		    left: 0 !important;
-		    right: 0 !important;
-		    background: white !important;
-		    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-		    z-index: 1000 !important;
-		}
-	</style>
 
 		<div id="content" class="site-content">
 		<div class="ast-container">
