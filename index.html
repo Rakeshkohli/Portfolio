@@ -631,25 +631,7 @@ flexibility(document.documentElement);
 				</div>
 					</div>
 				</div>
-				<!-- add animation -->
-				<script>
-					document.addEventListener("DOMContentLoaded", function () {
-					  const bars = document.querySelectorAll(".elementor-progress-bar");
-					
-					  const observer = new IntersectionObserver(entries => {
-					    entries.forEach(entry => {
-					      if (entry.isIntersecting) {
-					        const bar = entry.target;
-					        const max = bar.getAttribute("data-max");
-					        bar.style.width = max + "%";
-					        observer.unobserve(bar);
-					      }
-					    });
-					  }, { threshold: 0.3 });
-					
-					  bars.forEach(bar => observer.observe(bar));
-					});
-					</script>
+				
 
 		<div class="elementor-element elementor-element-21b4418 e-flex e-con-boxed e-con e-parent" data-id="21b4418" data-element_type="container" id="projects">
 					<div class="e-con-inner">
