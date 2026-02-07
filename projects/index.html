@@ -220,22 +220,18 @@ flexibility(document.documentElement);
 		</script>
 	<style>
 		.hfe-nav-menu__layout-horizontal {
-		    display: none;
+		    display: none !important;
 		}
 		
 		.hfe-nav-menu__layout-horizontal.menu-open {
-		    display: block;
-		    position: absolute;
-		    top: 100%;
-		    left: 0;
-		    right: 0;
-		    background: white;
-		    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		    z-index: 1000;
-		}
-		
-		.hfe-nav-menu__toggle.menu-toggle-active {
-		    background-color: #f0f0f0;
+		    display: block !important;
+		    position: absolute !important;
+		    top: 100% !important;
+		    left: 0 !important;
+		    right: 0 !important;
+		    background: white !important;
+		    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+		    z-index: 1000 !important;
 		}
 	</style>
 
